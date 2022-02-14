@@ -1,6 +1,6 @@
 async function reloadLife ()
 {
-    let reloadLife = await fetch('https://api-ninja-run.herokuapp.com/reload/' + user.get("ethAddress"))
+    let reloadLife = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/reload/' + user.get("ethAddress"))
 
     let response   = await reloadLife.json()
 

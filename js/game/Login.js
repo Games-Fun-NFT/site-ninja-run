@@ -29,7 +29,7 @@ async function login() {
 }
 
 async function registerLogin(user) {
-    let sendLogin = await fetch('https://api-ninja-run.herokuapp.com/register' + '/' + user)
+    let sendLogin = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/register' + '/' + user)
 
     let response  = await sendLogin.json()
 
@@ -43,7 +43,7 @@ async function registerLogin(user) {
 let count = 0
 
 async function showUser () {
-    let reciveLogin = await fetch('https://api-ninja-run.herokuapp.com/user' + '/' +user.get("ethAddress"))
+    let reciveLogin = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/user' + '/' +user.get("ethAddress"))
 
     let dataLogin   = await reciveLogin.json()
 

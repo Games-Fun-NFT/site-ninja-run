@@ -6,7 +6,7 @@ let user = Moralis.User.current();
 
 async function buyNft ()
 {
-    let buyNft   = await fetch('https://api-ninja-run.herokuapp.com/buy/' + user.get("ethAddress"))
+    let buyNft   = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/buy/' + user.get("ethAddress"))
 
     let response = await buyNft.json()
 
@@ -28,7 +28,7 @@ async function buyNft ()
 
 async function showNft()
 {
-    let buyNft   = await fetch('https://api-ninja-run.herokuapp.com/show/' + user.get("ethAddress"))
+    let buyNft   = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/show/' + user.get("ethAddress"))
 
     let response = await buyNft.json()
 
