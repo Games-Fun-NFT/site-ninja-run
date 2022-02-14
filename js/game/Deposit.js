@@ -3,10 +3,6 @@ const token_addres = "0xe9e7cea3dedca5984780bafc599bd69add087d56"
 async function sendDeposit(object) {
     const response = await fetch('https://api-ninja-run.herokuapp.com/deposit', {
         method: 'POST',
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
         body: JSON.stringify(object)
     })
     
