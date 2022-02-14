@@ -27,11 +27,7 @@ body {min-width: 960px;}.container_16{margin-left: auto;margin-right: auto;width
  Now let's Reset Stuff
 ----------------------------------------------*/
 html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
-<<<<<<< HEAD
 	margin: 0; padding: 0; border: 0; outline: 0; font-size: 80%; vertical-align: baseline; background: transparent; }									
-=======
-	margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }									
->>>>>>> cb20145a03b01d93c3060dc8229b0f58f54af43a
 
 article, aside, figure, footer, header, hgroup, nav, section {display: block;}
 
@@ -275,11 +271,7 @@ header { background: url('../css/images/bg_menu.png') repeat-x center top; posit
 .about a { float: right; margin:20px 15px 0 0; text-transform: uppercase;}
 .about a:hover { opacity: 0.9; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)"; filter: alpha(opacity=90); -moz-opacity: 0.9; -khtml-opacity: 0.9;}
 
-<<<<<<< HEAD
 .big_sep { background: url('../css/images/sep_big.png') no-repeat center top; height: 46px; margin: 25px 0;}
-=======
-.big_sep { background: url('../css/images/sep_big.png') no-repeat center top; height: 36px; margin: 25px 0;}
->>>>>>> cb20145a03b01d93c3060dc8229b0f58f54af43a
 .small_sep { background: url('../css/images/sep_small.png') no-repeat center top; height: 36px; margin: 25px 0;}
 
 /*
@@ -398,14 +390,11 @@ article ul li a:hover { opacity: 0.9;-ms-filter: "progid:DXImageTransform.Micros
 .previous { float: left; margin-left: 102px;}
 .next { float: right; margin-right: 26px;}
 
-<<<<<<< HEAD
 .demo-container
 {
   margin-bottom: 40px;
 }
 
-=======
->>>>>>> cb20145a03b01d93c3060dc8229b0f58f54af43a
 #logout {
   display: none;
 }
@@ -446,10 +435,7 @@ article ul li a:hover { opacity: 0.9;-ms-filter: "progid:DXImageTransform.Micros
 .connect_user > span 
 {
   color: white;
-<<<<<<< HEAD
   font-size: 32px;
-=======
->>>>>>> cb20145a03b01d93c3060dc8229b0f58f54af43a
 }
 
 #show_token {
