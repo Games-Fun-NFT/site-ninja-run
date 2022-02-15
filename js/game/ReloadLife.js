@@ -14,9 +14,10 @@ async function reloadLife ()
 
     let life_nft = document.getElementById('life_nft')
 
+
     if (response.life === 4) 
     {
-        life_nft.innerHTML = `Life 5`
+        life_nft.innerHTML = `Life ${response.life}`
     }
     else
     {
