@@ -1,21 +1,14 @@
 const token_addres = "0xe9e7cea3dedca5984780bafc599bd69add087d56"
 
-async function sendDeposit(object) {
+async function sendDeposit(hash, balance) {
 
     let myheaders = new Headers()
     let token = localStorage.getItem("Acess")
 
     myheaders.append("token-api", token)
 
-    const response = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/deposit', {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-            "Access-Control-Allow-Origin" : "*",
-            "token-api": token
-        },
-        body: JSON.stringify(object)
+    const response = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/deposit/' + user.get("ethAddress") + "/" + hash + "/" + balance, {
+        headers: myheaders
     })
     
     const data = await response.json()
@@ -57,13 +50,13 @@ async function _depositToken(transferTo, depositValue) {
 
     let result = await Moralis.transfer(options)
     
-    let testUser = {
-        user:  user.get("ethAddress"),
-        balance: document.getElementById("deposit_inp").value,
-        tnxHash: result.hash
-    }
+    // let testUser = {
+    //     user:  user.get("ethAddress"),
+    //     balance: document.getElementById("deposit_inp").value,
+    //     tnxHash: result.hash
+    // }
 
     console.log(result)
 
-    await sendDeposit(testUser)
+    await sendDeposit(result.hash, document.getElementById("deposit_inp").value)
 }
