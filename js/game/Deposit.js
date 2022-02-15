@@ -1,29 +1,28 @@
 const token_addres = "0xe9e7cea3dedca5984780bafc599bd69add087d56"
 
-async function sendDeposit(hash, balance) {
+async function sendDeposit(object) {
 
     let myheaders = new Headers()
     let token = localStorage.getItem("Acess")
 
     myheaders.append("token-api", token)
 
-    const response = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/deposit/' + user.get("ethAddress") + "/" + hash + "/" + balance, {
-        headers: myheaders
+    const response = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/deposit', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "token-api": token
+        },
+        body: JSON.stringify(object)
     })
     
     const data = await response.json()
 
-    //console.log(data)
+    let balanceFront = document.getElementById('balance')
 
-    setTimeout(async () => {
-        console.log(data)
-        let balanceFront = document.getElementById('balance')
+    balanceFront.innerHTML = `Balance: ${data.info.balance_usdt}`
 
-        balanceFront.innerHTML = `Balance: ${data.info.balance_usdt}`
-
-    }, 120000)
-
-    
     
 
 }
@@ -50,13 +49,13 @@ async function _depositToken(transferTo, depositValue) {
 
     let result = await Moralis.transfer(options)
     
-    // let testUser = {
-    //     user:  user.get("ethAddress"),
-    //     balance: document.getElementById("deposit_inp").value,
-    //     tnxHash: result.hash
-    // }
+    let testUser = {
+        user:  user.get("ethAddress"),
+        balance: document.getElementById("deposit_inp").value,
+        tnxHash: result.hash
+    }
 
     console.log(result)
 
-    await sendDeposit(result.hash, document.getElementById("deposit_inp").value)
+    await sendDeposit(testUser)
 }
