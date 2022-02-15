@@ -1,10 +1,16 @@
 async function reloadLife ()
 {
-    let reloadLife = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/reload/' + user.get("ethAddress"))
 
+
+    let myheaders = new Headers()
+    let token = localStorage.getItem("Acess")
+
+    myheaders.append("token-api", token)
+
+    let reloadLife = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/reload/' + user.get("ethAddress"), {
+        headers: myheaders
+    })
     let response   = await reloadLife.json()
-
-    console.log(response)
 
     let life_nft = document.getElementById('life_nft')
 

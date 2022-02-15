@@ -6,8 +6,16 @@ let user = Moralis.User.current();
 
 async function buyNft ()
 {
-    let buyNft   = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/buy/' + user.get("ethAddress"))
 
+    let myheaders = new Headers()
+    let token = localStorage.getItem("Acess")
+
+    myheaders.append("token-api", token)
+
+
+    let buyNft   = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/buy/' + user.get("ethAddress"), {
+        headers: myheaders
+    })
     let response = await buyNft.json()
 
     if (response.code === 200) 
@@ -28,7 +36,14 @@ async function buyNft ()
 
 async function showNft()
 {
-    let buyNft   = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/show/' + user.get("ethAddress"))
+    let myheaders = new Headers()
+    let token = localStorage.getItem("Acess")
+
+    myheaders.append("token-api", token)
+
+    let buyNft   = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/show/' + user.get("ethAddress"), {
+        headers: myheaders
+    })
 
     let response = await buyNft.json()
 
@@ -45,7 +60,6 @@ async function showNft()
         
         life_nft.innerHTML = `Life ${response.life}`
 
-        console.log(response)
     }
     else 
     {
@@ -58,5 +72,18 @@ async function showNft()
     }
 
 }
+
+async function totalNft ()
+{
+    let buyNft   = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/total/')
+
+    let response = await buyNft.json()
+
+    let totalNFTFront = document.getElementById('total-nft')
+
+    totalNFTFront.innerHTML = `Public Sale ( ${response.total} | 7000 )`
+}
+
+totalNft()
 
 showNft()

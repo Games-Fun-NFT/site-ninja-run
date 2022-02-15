@@ -51,10 +51,10 @@ async function showUser () {
     let balanceFront = document.getElementById('balance')
     let token_acess  = document.getElementById('token_acess')
 
+
+    localStorage.setItem("Acess", dataLogin.token)
+
     
-
-    console.log(dataLogin)
-
     let show_token   = document.getElementById('show_token')
 
     show_token.addEventListener('click', () => {

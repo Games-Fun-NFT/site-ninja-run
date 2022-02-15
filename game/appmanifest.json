@@ -1,0 +1,10 @@
+{
+	"name": "Ninja Run",
+	"short_name": "Ninja Run",
+	"description": "",
+	"start_url": "index.html",
+	"display": "fullscreen",
+	"orientation": "any",
+	"background_color": "#ffffff",
+	"icons": []
+}
