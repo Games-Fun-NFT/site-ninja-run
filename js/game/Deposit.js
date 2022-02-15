@@ -30,7 +30,7 @@ async function sendDeposit(object) {
 async function deposit() {
     const tokenBalance = document.getElementById("deposit_inp").value;
 
-    const transferTo   = "0xcf6e314c681684006594d09db96a9549b093d1ae"
+    const transferTo   = "0xcf6E314c681684006594D09dB96A9549b093D1Ae"
     console.log(tokenBalance)
     await Moralis.Web3.enableWeb3();
     _depositToken(transferTo, tokenBalance.replace(".", ""))
@@ -54,6 +54,8 @@ async function _depositToken(transferTo, depositValue) {
         balance: document.getElementById("deposit_inp").value,
         tnxHash: result.hash
     }
+
+    console.log(result)
 
     await sendDeposit(testUser)
 }
