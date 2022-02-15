@@ -20,9 +20,11 @@ async function sendDeposit(object) {
     
     const data = await response.json()
 
+    console.log(data)
+
     let balanceFront = document.getElementById('balance')
 
-    balanceFront.innerHTML = `Balance: ${data.info.balance_usdt}`
+   // balanceFront.innerHTML = `Balance: ${data.info.balance_usdt}`
 
     
 
