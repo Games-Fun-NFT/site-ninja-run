@@ -12,6 +12,7 @@ async function sendDeposit(object) {
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
+            "Access-Control-Allow-Origin" : "*",
             "token-api": token
         },
         body: JSON.stringify(object)
