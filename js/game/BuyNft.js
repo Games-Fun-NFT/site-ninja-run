@@ -6,8 +6,16 @@ let user = Moralis.User.current();
 
 async function buyNft ()
 {
-    let buyNft   = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/buy/' + user.get("ethAddress"))
 
+    let myheaders = new Headers()
+    let token = localStorage.getItem("Acess")
+
+    myheaders.append("token-api", token)
+
+
+    let buyNft   = await fetch('http://localhost:1245/buy/' + user.get("ethAddress"), {
+        headers: myheaders
+    })
     let response = await buyNft.json()
 
     if (response.code === 200) 
@@ -28,7 +36,14 @@ async function buyNft ()
 
 async function showNft()
 {
-    let buyNft   = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/show/' + user.get("ethAddress"))
+    let myheaders = new Headers()
+    let token = localStorage.getItem("Acess")
+
+    myheaders.append("token-api", token)
+
+    let buyNft   = await fetch('http://localhost:1245/show/' + user.get("ethAddress"), {
+        headers: myheaders
+    })
 
     let response = await buyNft.json()
 
