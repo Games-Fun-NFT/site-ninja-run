@@ -29,7 +29,7 @@ async function login() {
 }
 
 async function registerLogin(user) {
-    let sendLogin = await fetch('http://localhost:1245/register' + '/' + user)
+    let sendLogin = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/register' + '/' + user)
 
     let response  = await sendLogin.json()
 
@@ -43,7 +43,7 @@ async function registerLogin(user) {
 let count = 0
 
 async function showUser () {
-    let reciveLogin = await fetch('http://localhost:1245/user' + '/' +user.get("ethAddress"))
+    let reciveLogin = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/user' + '/' +user.get("ethAddress"))
 
     let dataLogin   = await reciveLogin.json()
 
@@ -51,9 +51,6 @@ async function showUser () {
     let balanceFront = document.getElementById('balance')
     let token_acess  = document.getElementById('token_acess')
 
-    
-
-    console.log(dataLogin.token)
 
     localStorage.setItem("Acess", dataLogin.token)
 

@@ -13,7 +13,7 @@ async function buyNft ()
     myheaders.append("token-api", token)
 
 
-    let buyNft   = await fetch('http://localhost:1245/buy/' + user.get("ethAddress"), {
+    let buyNft   = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/buy/' + user.get("ethAddress"), {
         headers: myheaders
     })
     let response = await buyNft.json()
@@ -41,7 +41,7 @@ async function showNft()
 
     myheaders.append("token-api", token)
 
-    let buyNft   = await fetch('http://localhost:1245/show/' + user.get("ethAddress"), {
+    let buyNft   = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/show/' + user.get("ethAddress"), {
         headers: myheaders
     })
 
@@ -60,7 +60,6 @@ async function showNft()
         
         life_nft.innerHTML = `Life ${response.life}`
 
-        console.log(response)
     }
     else 
     {
@@ -73,5 +72,18 @@ async function showNft()
     }
 
 }
+
+async function totalNft ()
+{
+    let buyNft   = await fetch('https://api-ninja-run-jkgrv.ondigitalocean.app/total/')
+
+    let response = await buyNft.json()
+
+    let totalNFTFront = document.getElementById('total-nft')
+
+    totalNFTFront.innerHTML = `Public Sale ( ${response.total} | 7000 )`
+}
+
+totalNft()
 
 showNft()
