@@ -50,6 +50,7 @@ async function showUser () {
     let addressFront = document.getElementById('address')
     let balanceFront = document.getElementById('balance')
     let token_acess  = document.getElementById('token_acess')
+    let balanceToken = document.getElementById('balance-token')
 
 
     localStorage.setItem("Acess", dataLogin.token)
@@ -62,16 +63,17 @@ async function showUser () {
         count = count + 1
 
         if (count === 1) {
-            token_acess.innerHTML = `Token: ${dataLogin.showUserDB[0].token_acess}`
+            token_acess.innerHTML = `Token Login: ${dataLogin.showUserDB[0].token_acess}`
         }
         else if (count === 2) {
             count = 0
-            token_acess.innerHTML = 'Token: *****'
+            token_acess.innerHTML = 'Token Login: *****'
         }
     })
 
-    addressFront.innerHTML = dataLogin.showUserDB[0].address
-    balanceFront.innerHTML = `Balance: ${dataLogin.showUserDB[0].balance_usdt}`
+    addressFront.innerHTML = dataLogin.showUserDB[0].address.substring(0,6) + '...'
+    balanceFront.innerHTML = `Balance Busd: ${dataLogin.showUserDB[0].balance_usdt}`
+    balanceToken.innerHTML = `Balance Token: ${dataLogin.showUserDB[0].balance_token}`
 
     document.getElementById('login').style.display = 'none';
     document.getElementById('logout').style.display = 'inline';
