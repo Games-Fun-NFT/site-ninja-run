@@ -647,3 +647,20 @@ footer .copy { margin-top: 30px;}
 footer p { color: #fff; font-size: 10px; text-shadow: 0 1px 0 rgba(0,0,0,0.55); opacity: 0.6; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"; filter: alpha(opacity=60);}
 
 #textMain { width: 445px; }
+
+/* textWhitepaper */
+
+.grid_7WhitePaper { 
+  width: 100%;
+  text-align: center; 
+  margin-top: 180px;
+}
+
+.textWhitepaper { 
+  color: white;
+  font-size: 40px;
+  
+  transition: 0.3s;
+}
+
+.textWhitepaper:hover {color: #99b324 !important;}
