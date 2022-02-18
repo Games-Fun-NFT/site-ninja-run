@@ -63,11 +63,11 @@ async function showUser () {
         count = count + 1
 
         if (count === 1) {
-            token_acess.innerHTML = `Token: ${dataLogin.showUserDB[0].token_acess}`
+            token_acess.innerHTML = `Token Login: ${dataLogin.showUserDB[0].token_acess}`
         }
         else if (count === 2) {
             count = 0
-            token_acess.innerHTML = 'Token: *****'
+            token_acess.innerHTML = 'Token Login: *****'
         }
     })
 
