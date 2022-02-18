@@ -71,7 +71,7 @@ async function showUser () {
         }
     })
 
-    addressFront.innerHTML = dataLogin.showUserDB[0].address
+    addressFront.innerHTML = dataLogin.showUserDB[0].address.substring(0,6)
     balanceFront.innerHTML = `Balance Busd: ${dataLogin.showUserDB[0].balance_usdt}`
     balanceToken.innerHTML = `Balance Token: ${dataLogin.showUserDB[0].balance_token}`
 
