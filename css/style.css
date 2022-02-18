@@ -390,6 +390,7 @@ article ul li a:hover { opacity: 0.9;-ms-filter: "progid:DXImageTransform.Micros
 .previous { float: left; margin-left: 102px;}
 .next { float: right; margin-right: 26px;}
 
+
 .demo-container
 {
   margin-bottom: 40px;
@@ -401,10 +402,9 @@ article ul li a:hover { opacity: 0.9;-ms-filter: "progid:DXImageTransform.Micros
 
 .bridge-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
   flex-direction: column;
-  margin-top: 100px;
 }
 
 .bridge-container > span
@@ -431,6 +431,25 @@ article ul li a:hover { opacity: 0.9;-ms-filter: "progid:DXImageTransform.Micros
   color: #57711c;
   border-radius: 8%;
 }
+
+.balance_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.balance_container > span
+{
+  font-size: 26px;
+  margin: 20px;
+  color: whitesmoke;
+}
+
+.balance_container > button{
+  margin-left: 20px;
+}
+
 
 .connect_user > span 
 {
