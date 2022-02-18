@@ -450,6 +450,10 @@ article ul li a:hover { opacity: 0.9;-ms-filter: "progid:DXImageTransform.Micros
   margin-left: 20px;
 }
 
+.connect_user {
+  margin-top: 20px;
+  margin-left: 20px;
+}
 
 .connect_user > span 
 {
