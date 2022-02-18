@@ -50,6 +50,7 @@ async function showUser () {
     let addressFront = document.getElementById('address')
     let balanceFront = document.getElementById('balance')
     let token_acess  = document.getElementById('token_acess')
+    let balanceToken = document.getElementById('balance-token')
 
 
     localStorage.setItem("Acess", dataLogin.token)
@@ -71,7 +72,8 @@ async function showUser () {
     })
 
     addressFront.innerHTML = dataLogin.showUserDB[0].address
-    balanceFront.innerHTML = `Balance: ${dataLogin.showUserDB[0].balance_usdt}`
+    balanceFront.innerHTML = `Balance Busd: ${dataLogin.showUserDB[0].balance_usdt}`
+    balanceToken.innerHTML = `Balance Token: ${dataLogin.showUserDB[0].balance_token}`
 
     document.getElementById('login').style.display = 'none';
     document.getElementById('logout').style.display = 'inline';
